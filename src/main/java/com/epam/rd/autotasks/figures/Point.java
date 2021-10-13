@@ -1,6 +1,8 @@
 package com.epam.rd.autotasks.figures;
 
-class Point {
+import java.util.Comparator;
+
+class Point implements Comparator<Point> {
     private double x;
     private double y;
 
@@ -17,4 +19,8 @@ class Point {
         return y;
     }
 
+    @Override
+    public int compare(Point o1, Point o2) {
+        return Double.compare(o1.getX(), o2.getX());
+    }
 }
